@@ -1,7 +1,7 @@
 const express = require("express");
 const { body, validationResult } = require("express-validator");
 const router = express.Router();
-const userModel = require("./models/user.models");
+const userModel = require("../models/user.models");
 
 router.get("/test", (req, res) => {
   res.send("User Route1");
