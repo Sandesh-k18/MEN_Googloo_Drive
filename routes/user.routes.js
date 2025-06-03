@@ -25,10 +25,10 @@ router.post(
       });
     }
 
-    const { username, email, password } = req.body;
+    const { email, username, password } = req.body;
     const newUser = await userModel.create({
-      username,
       email,
+      username,
       password,
     });
     res.json(newUser);
