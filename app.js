@@ -4,12 +4,13 @@ const userRouter = require("./routes/user.route");
 const router = require("./routes/user.route");
 const dotenv = require("dotenv");
 dotenv.config();
-
-
+const connectToDB = require("./config/db");
+connectToDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
-
 app.use("/user", userRouter);
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log("Server runnig at port 3000");
+});
